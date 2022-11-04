@@ -1,0 +1,1 @@
+web: gunicorn chiledu.wsgi --log-file -
