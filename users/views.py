@@ -13,8 +13,6 @@ import matplotlib.image as mpimg
 
 from . import models
 from . import serializers
-# from ..ai.returnAvatar.py import returnAvatar
-from . import returnAvatar
 
 
 @api_view(['POST'])
