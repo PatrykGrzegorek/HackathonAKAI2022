@@ -7,8 +7,6 @@ from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 import json
-import numpy
-import matplotlib.image as mpimg
 
 
 from . import models
