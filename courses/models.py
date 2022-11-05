@@ -20,5 +20,6 @@ class Game(models.Model):
     type = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=64)
     health = models.PositiveSmallIntegerField(default=0)
+    monsters = models.PositiveSmallIntegerField(default=1)
 
     questions = models.ManyToManyField(Question)
