@@ -19,6 +19,7 @@ class Question(models.Model):
 class Game(models.Model):
     type = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=64)
+    cash = models.CharField(max_length=32, default=100)
     health = models.PositiveSmallIntegerField(default=0)
     monsters = models.PositiveSmallIntegerField(default=1)
 
