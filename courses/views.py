@@ -18,7 +18,7 @@ def OneGameView(request, id):
             for x in queryset.questions.all():
                 for y in x.answers.all():
                     list_answers.append(y.answer)
-                list_questions.append({"question": x.question, "answers": list_answers})
+                list_questions.append({"question": x.question, "answers": list_answers, "correct": x.correct})
                 list_answers = []
             dict_game = {"id": queryset.id, "type": queryset.type, "name": queryset.name, "health": queryset.health, "questions":list_questions}
             return Response(dict_game, status=status.HTTP_200_OK)

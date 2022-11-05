@@ -11,6 +11,7 @@ class Answer(models.Model):
 class Question(models.Model):
     question = models.CharField(max_length=128)
     answers = models.ManyToManyField(Answer)
+    correct = models.PositiveSmallIntegerField(default=0)
 
     def __str__(self):
         return self.question
