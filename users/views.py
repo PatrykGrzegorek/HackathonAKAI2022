@@ -33,6 +33,23 @@ def LoginView(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@api_view(['POST'])
+def AddCash(request, id):
+    if request.method == 'POST':
+        serializer = serializers.AddCash(data=request.data)
+        if serializer.is_valid():
+            try:
+                queryset = models.CustomUser.objects.get(id=id)
+                cash = int(queryset.cash) + int(serializer.data['cash'])
+                queryset.cash = str(cash)
+                queryset.save()
+                return Response("Cash added", status=status.HTTP_200_OK)
+            except models.CustomUser.DoesNotExist:
+                return Response("This username does not exist", status=status.HTTP_404_NOT_FOUND)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
 @api_view(['GET'])
 def OneChildrenView(request, id):
     try:

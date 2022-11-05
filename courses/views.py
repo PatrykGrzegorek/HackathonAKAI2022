@@ -20,7 +20,7 @@ def OneGameView(request, id):
                     list_answers.append(y.answer)
                 list_questions.append({"question": x.question, "answers": list_answers})
                 list_answers = []
-            dict_game = {"id": queryset.id, "type": queryset.type, "name": queryset.name, "questions":list_questions}
+            dict_game = {"id": queryset.id, "type": queryset.type, "name": queryset.name, "health": queryset.health, "questions":list_questions}
             return Response(dict_game, status=status.HTTP_200_OK)
     except models.Game.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)

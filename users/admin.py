@@ -4,7 +4,7 @@ from . import models
 
 
 @admin.register(models.CustomUser)
-class PetOwnerAdmin(admin.ModelAdmin):
+class CustomUserAdmin(admin.ModelAdmin):
     list_display = ['id', 'email', 'username', 'name', 'surname', 'created']
     list_filter = ['username', 'email', 'created']
 

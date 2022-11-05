@@ -14,7 +14,7 @@ class CustomUserSerializers(serializers.ModelSerializer):
 
     class Meta:
         model = models.CustomUser
-        fields = ['id', 'username', 'name', 'surname', 'email', 'type_of_account', 'profile_pic', 'created']
+        fields = ['id', 'username', 'name', 'surname', 'cash', 'email', 'type_of_account', 'profile_pic', 'created']
 
 
 class CustomUserRegistrationSerializers(serializers.ModelSerializer):
@@ -24,3 +24,8 @@ class CustomUserRegistrationSerializers(serializers.ModelSerializer):
         fields = ['username', 'name', 'surname', 'email', 'password', 'type_of_account', 'profile_pic', 'created']
 
 
+class AddCash(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Cash
+        fields = ['cash']

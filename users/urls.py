@@ -9,4 +9,5 @@ urlpatterns = [
 
     path('children/registration', views.RegistrationChildren.as_view(), name="create"),
     path('children/<id>/', views.OneChildrenView),
+    path('addcash/<id>/', views.AddCash),
 ]

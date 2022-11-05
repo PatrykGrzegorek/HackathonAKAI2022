@@ -19,5 +19,6 @@ class Question(models.Model):
 class Game(models.Model):
     type = models.PositiveSmallIntegerField()
     name = models.CharField(max_length=64)
+    health = models.PositiveSmallIntegerField(default=0)
 
     questions = models.ManyToManyField(Question)
